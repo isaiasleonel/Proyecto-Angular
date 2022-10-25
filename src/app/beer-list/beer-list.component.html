@@ -1,0 +1,26 @@
+<h1>Lista de cervezas</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Precio</th>
+      <th>Stock</th>
+      <th>Descuento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr [ngClass]="{ clearance: beer.clearance }" *ngFor="let beer of beers">
+      <td><img [src]="beer.image" [alt]="beer.name" /></td>
+      <td>{{ beer.name }}</td>
+      <td>{{ beer.type }}</td>
+      <td>{{ beer.price | currency }}</td>
+      <td>{{ beer.clearance }}</td>
+      <td>
+        <span class="badge badge-warning" *ngIf="beer.stock == 0"
+          >Sin Stock</span
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>
