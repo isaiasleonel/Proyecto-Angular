@@ -15,6 +15,7 @@ export class BeerListComponent implements OnInit {
       stock: 5,
       image: 'assets/image/porter.jpeg',
       clearance: false,
+      quantify: 0,
     },
     {
       name: 'Red Red Wine',
@@ -23,6 +24,7 @@ export class BeerListComponent implements OnInit {
       stock: 3,
       image: 'assets/image/porter.jpeg',
       clearance: true,
+      quantify: 0,
     },
     {
       name: 'Yellow Submarine',
@@ -31,10 +33,23 @@ export class BeerListComponent implements OnInit {
       stock: 0,
       image: 'assets/image/porter.jpeg',
       clearance: false,
+      quantify: 0,
     },
   ];
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  upQuantify(beer: Beer): void {
+    if (beer.quantify < beer.stock) beer.quantify++;
+  }
+
+  downQuantify(beer: Beer): void {
+    if (beer.quantify > 0) beer.quantify--;
+  }
+
+  onChangeQuantify(beer: Beer): void {
+    console.log(beer);
+  }
 }

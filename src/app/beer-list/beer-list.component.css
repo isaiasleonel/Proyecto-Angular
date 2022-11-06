@@ -1,7 +1,16 @@
-h1 {
-  color: bisque;
-}
 .clearance {
   border: solid 2px green;
   background-color: lightgreen;
+}
+
+img {
+  height: 15vh;
+}
+
+td {
+  vertical-align: middle;
+}
+
+input {
+  max-width: 40px;
 }
